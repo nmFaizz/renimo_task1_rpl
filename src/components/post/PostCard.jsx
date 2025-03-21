@@ -4,7 +4,7 @@ import { usePosts } from "../../providers/PostsProvider";
 import './styles/post-card.css'
 
 export default function PostCard({ data }) {
-    const { handleDeletePost } = usePosts();
+    const { handleLikePost } = usePosts();
 
     return (
         <div className="card-container">
@@ -19,16 +19,31 @@ export default function PostCard({ data }) {
             </div>
             <div className="card-content">
                 <p>{data.content}</p>
+
+                <p style={{marginTop: "2rem"}}>Likes {data.likes} - Comments {data.comments.total}</p>
             </div>
             <div className="card-footer">
-                <Button 
-                    variant="primary"
-                    leftIconSrc={"src/assets/icons/heart-outline.svg"}
-                    leftIconAlt="like"
-                    leftIconClassname="invert"
-                >
-                    Like
-                </Button>
+                {data.isLiked ? (
+                    <Button 
+                        variant="primary"
+                        leftIconSrc={"src/assets/icons/heart-fill.svg"}
+                        leftIconAlt="like"
+                        leftIconClassname="invert"
+                        onClick={() => handleLikePost(data.id)}
+                    >
+                        Liked
+                    </Button>
+                ): (
+                    <Button 
+                        variant="primary"
+                        leftIconSrc={"src/assets/icons/heart-outline.svg"}
+                        leftIconAlt="like"
+                        leftIconClassname="invert"
+                        onClick={() => handleLikePost(data.id)}
+                    >
+                        Like
+                    </Button>
+                )}
                 <Button 
                     variant="outlined"
                     leftIconSrc={"src/assets/icons/comment-dots.svg"}

@@ -2,7 +2,10 @@ const defaultOptions = {
     weekday: 'long',    
     day: 'numeric',     
     month: 'long',      
-    year: 'numeric'
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
 }
 
 export const formatDateToCustom = (date, options=defaultOptions) => {

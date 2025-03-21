@@ -26,7 +26,7 @@ export const PostsProvider = ({ children }) => {
 
   const handleCreatePost = (e) => {
     e.preventDefault()
-    
+
     const newPost = {
         id: +new Date(),
         user: {
@@ -36,6 +36,7 @@ export const PostsProvider = ({ children }) => {
         createdAt: formatDateToCustom(new Date()),
         content: postText,
         likes: 0,
+        isLiked: false,
         comments: {
             total: 0,
             data: [],
@@ -48,6 +49,8 @@ export const PostsProvider = ({ children }) => {
             ...prev,
         ]
     });
+
+    setPostText("");
   };
 
   const handleDeletePost = (postId) => {
@@ -55,6 +58,22 @@ export const PostsProvider = ({ children }) => {
         return prev.filter((post) => post.id !== postId)
     });
   };
+
+  const handleLikePost = (postId) => {
+    setPosts((prev) => {
+      return prev.map((post) => {
+        if (post.id === postId) {
+          return {
+            ...post,
+            isLiked: !post.isLiked,
+            likes: post.isLiked ? post.likes - 1 : post.likes + 1,
+          };
+        }
+        return post;
+      });
+    });
+  };
+  
 
   const handleEditPost = (post) => {
 
@@ -68,6 +87,7 @@ export const PostsProvider = ({ children }) => {
             handleDeletePost, 
             handleEditPost,
             postText,
+            handleLikePost,
             setPostText
         }}
     >

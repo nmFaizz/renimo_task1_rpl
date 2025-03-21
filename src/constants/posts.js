@@ -8,6 +8,7 @@ export const defaultPosts = [
         createdAt: 'Tuesday, June 1, 2021',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec neque ac nisi lacinia fermentum.',
         likes: 10,
+        isLiked: false,
         comments: {
             total: 3,
             data: [
@@ -50,6 +51,7 @@ export const defaultPosts = [
         createdAt: 'Wednesday, June 2, 2021',
         content: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
         likes: 15,
+        isLiked: false,
         comments: {
             total: 2,
             data: [
@@ -78,6 +80,7 @@ export const defaultPosts = [
         createdAt: 'Thursday, June 3, 2021',
         content: 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.',
         likes: 20,
+        isLiked: false,
         comments: {
             total: 1,
             data: [
