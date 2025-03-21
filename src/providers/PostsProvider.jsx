@@ -20,6 +20,8 @@ export const PostsProvider = ({ children }) => {
   });
   const [postText, setPostText] = useState("");
   const [searchedPosts, setSearchedPosts] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [isPosted, setIsPosted] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(posts));
@@ -52,6 +54,7 @@ export const PostsProvider = ({ children }) => {
     });
 
     setPostText("");
+    setIsPosted(true);
   };
 
   const handleDeletePost = (postId) => {
@@ -110,7 +113,11 @@ export const PostsProvider = ({ children }) => {
             handleLikePost,
             setPostText,
             handleSearchPosts,
-            searchedPosts
+            searchedPosts,
+            searchText,
+            setSearchText,
+            isPosted,
+            setIsPosted
         }}
     >
       {children}

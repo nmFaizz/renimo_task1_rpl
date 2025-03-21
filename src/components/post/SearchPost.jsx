@@ -3,8 +3,7 @@ import { usePosts } from '../../providers/PostsProvider'
 import './styles/search-post.css'
 
 export default function SearchPost() {
-    const [searchText, setSearchText] = React.useState('')
-    const { handleSearchPosts } = usePosts()
+    const { handleSearchPosts, searchText, setSearchText } = usePosts()
 
     return (
         <div className="search-post-container">

@@ -7,7 +7,8 @@
 }
 
 .header-logo {
-    font: bold;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .header {
@@ -15,6 +16,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-white);
+    z-index: 999;
 }
 
 .header .header-nav {

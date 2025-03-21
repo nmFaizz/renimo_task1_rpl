@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: white;
@@ -87,6 +91,11 @@ select:focus {
 input::placeholder,
 textarea::placeholder {
   color: #999;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 
