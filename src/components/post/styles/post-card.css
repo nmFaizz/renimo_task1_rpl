@@ -1,0 +1,30 @@
+.card-container {
+    background-color: var(--secondary-white);
+    padding: 1.5rem;
+    border-radius: var(--rounded-xl);
+}
+
+.card-container .card-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card-container .card-content {
+    margin-block: 1rem;
+}
+
+.card-container .card-header .profile {
+    background-color: black;
+    border-radius: 9999px;
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+}
+
+.card-container .card-footer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 2rem;
+}

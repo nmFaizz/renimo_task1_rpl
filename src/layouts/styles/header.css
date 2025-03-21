@@ -1,0 +1,23 @@
+.profile-figure {
+    background-color: black;
+    border-radius: 9999px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+}
+
+.header-logo {
+    font: bold;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header .header-nav {
+    display: flex;
+    gap: 20px;
+}
