@@ -19,6 +19,7 @@ export const PostsProvider = ({ children }) => {
     return posts ? JSON.parse(posts) : defaultPosts;
   });
   const [postText, setPostText] = useState("");
+  const [searchedPosts, setSearchedPosts] = useState([]);
 
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(posts));
@@ -89,6 +90,15 @@ export const PostsProvider = ({ children }) => {
     });
   };
 
+  const handleSearchPosts = (searchText) => {
+    setSearchedPosts(
+        posts.filter((post) => {
+            const lowerCase = post.content.toLowerCase();
+            return lowerCase.includes(searchText.toLowerCase());
+        })
+    );
+  }
+
   return (
     <PostsContext.Provider 
         value={{ 
@@ -98,7 +108,9 @@ export const PostsProvider = ({ children }) => {
             handleEditPost,
             postText,
             handleLikePost,
-            setPostText
+            setPostText,
+            handleSearchPosts,
+            searchedPosts
         }}
     >
       {children}

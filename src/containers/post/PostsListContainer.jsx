@@ -4,13 +4,21 @@ import './styles/posts-list.css'
 import { usePosts } from "../../providers/PostsProvider";
 
 export default function PostsListContainer() {
-    const { posts } = usePosts();
+    const { posts, searchedPosts } = usePosts();
 
     return (
-        <div className="posts-list-container">
-            {posts.map((post) => (
-                <PostCard key={post.id} data={post} />
-            ))}
-        </div>
+        <>
+            <h3 style={{marginTop: "1rem"}}>Latest post (s)</h3>
+            <div className="posts-list-container">
+                {searchedPosts.length > 0 ? searchedPosts.map((post) => (
+                    <PostCard key={post.id} data={post} />
+                )) : (
+                    posts.map((post) => (
+                        <PostCard key={post.id} data={post} />
+                    ))
+                )}
+               
+            </div>
+        </>
     )
 }

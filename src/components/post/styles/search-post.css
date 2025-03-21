@@ -1,0 +1,16 @@
+.search-post-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    border-radius: var(--rounded-xl);
+    background-color: var(--secondary-white);
+    margin-top: 1rem;
+}
+
+.search-post-container input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-gray);
+    border-radius: var(--rounded-lg);
+}
