@@ -4,7 +4,7 @@ import './styles/create-post.css'
 import { usePosts } from "../../providers/PostsProvider"
 
 export default function CreatePost() {
-    const { handleCreatePost, setPostText } = usePosts()
+    const { handleCreatePost, setPostText, postText } = usePosts()
 
     return (
         <div className='create-post-container'>
@@ -16,7 +16,8 @@ export default function CreatePost() {
                     <textarea 
                         onChange={(e) => setPostText(e.target.value)}
                         placeholder="What's happening?" 
-                        maxLength={280} 
+                        maxLength={280}
+                        value={postText} 
                         required
                     />
                 </div>

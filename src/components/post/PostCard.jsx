@@ -1,30 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../buttons/Button";
 import { usePosts } from "../../providers/PostsProvider";
 import './styles/post-card.css'
 
 export default function PostCard({ data }) {
-    const { handleLikePost } = usePosts();
+    const { handleLikePost, handleDeletePost, handleEditPost } = usePosts();
+
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedContent, setEditedContent] = useState(data.content); 
+
+    const handleSaveEdit = () => {
+        handleEditPost(data.id, editedContent);
+        setIsEditing(false); 
+    };
+
+    const handleCancelEdit = () => {
+        setEditedContent(data.content);
+        setIsEditing(false);
+    };
 
     return (
         <div className="card-container">
             <div className="card-header">
                 <figure className="profile">
-                    <img src="src/assets/sinon.jpeg" alt="profile" width={35}/>
+                    <img src={data.user.avatar || "src/assets/sinon.jpeg"} alt="profile" width={35} />
                 </figure>
-                <div>
+                <div className="profile-info">
                     <p>{data.user.username}</p>
                     <span>{data.createdAt}</span>
                 </div>
-            </div>
-            <div className="card-content">
-                <p>{data.content}</p>
 
-                <p style={{marginTop: "2rem"}}>Likes {data.likes} - Comments {data.comments.total}</p>
+                {!isEditing && (
+                    <Button 
+                        variant="outlined"
+                        onClick={() => setIsEditing(true)}
+                        style={{ marginLeft: "auto"}}
+                    >
+                        Edit
+                    </Button>
+                )}
             </div>
+            
+            <div className="card-content">
+                {isEditing ? (
+                    <textarea
+                        value={editedContent}
+                        onChange={(e) => setEditedContent(e.target.value)}
+                        rows="4"
+                        className="edit-textarea"
+                    />
+                ) : (
+                    <p>{data.content}</p>
+                )}
+
+                <p style={{ marginTop: "2rem" }}>
+                    Likes {data.likes} - Comments {data.comments.total}
+                </p>
+            </div>
+
             <div className="card-footer">
                 {data.isLiked ? (
-                    <Button 
+                    <Button
                         variant="primary"
                         leftIconSrc={"src/assets/icons/heart-fill.svg"}
                         leftIconAlt="like"
@@ -33,8 +69,8 @@ export default function PostCard({ data }) {
                     >
                         Liked
                     </Button>
-                ): (
-                    <Button 
+                ) : (
+                    <Button
                         variant="primary"
                         leftIconSrc={"src/assets/icons/heart-outline.svg"}
                         leftIconAlt="like"
@@ -44,7 +80,8 @@ export default function PostCard({ data }) {
                         Like
                     </Button>
                 )}
-                <Button 
+
+                <Button
                     variant="outlined"
                     leftIconSrc={"src/assets/icons/comment-dots.svg"}
                     leftIconAlt="comment"
@@ -52,13 +89,21 @@ export default function PostCard({ data }) {
                 >
                     Comment
                 </Button>
+
                 <Button
                     variant="danger"
                     onClick={() => handleDeletePost(data.id)}
                 >
                     Delete
                 </Button>
+
+                {isEditing && (
+                    <>
+                        <Button variant="outlined" onClick={handleSaveEdit}>Save</Button>
+                        <Button variant="outlined" onClick={handleCancelEdit}>Cancel</Button>
+                    </>
+                )}
             </div>
         </div>
-    )
+    );
 }

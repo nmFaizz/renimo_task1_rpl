@@ -75,8 +75,18 @@ export const PostsProvider = ({ children }) => {
   };
   
 
-  const handleEditPost = (post) => {
-
+  const handleEditPost = (postId, newText) => {
+    setPosts((prev) => {
+      return prev.map((post) => {
+        if (post.id === postId) {
+          return {
+            ...post,
+            content: newText,
+          };
+        }
+        return post;
+      });
+    });
   };
 
   return (

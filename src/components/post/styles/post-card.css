@@ -28,3 +28,10 @@
     align-items: center;
     margin-top: 1rem;
 }
+
+.card-container .edit-textarea {
+    width: 100%;
+    border: 1px solid var(--primary-gray);
+    padding: 1rem;
+    border-radius: var(--rounded-lg);
+}
