@@ -40,6 +40,7 @@ export const PostsProvider = ({ children }) => {
         content: postText,
         likes: 0,
         isLiked: false,
+        isEditable: true,
         comments: {
             total: 0,
             data: [],

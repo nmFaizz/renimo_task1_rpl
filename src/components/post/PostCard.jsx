@@ -30,7 +30,7 @@ export default function PostCard({ data }) {
                     <span>{data.createdAt}</span>
                 </div>
 
-                {!isEditing && (
+                {!isEditing && data.isEditable && (
                     <Button 
                         variant="outlined"
                         onClick={() => setIsEditing(true)}
@@ -87,16 +87,17 @@ export default function PostCard({ data }) {
                 >
                     {data.comments.total}
                 </Button>
-
-                <Button
-                    variant="unstyled"
-                    onClick={() => handleDeletePost(data.id)}
-                    leftIconSrc={"/icons/trash.svg"}
-                    leftIconAlt="delete"
-                    leftIconWidth={20}
-                >
-
-                </Button>
+                
+                {data.isEditable && (
+                    <Button
+                        variant="unstyled"
+                        onClick={() => handleDeletePost(data.id)}
+                        leftIconSrc={"/icons/trash.svg"}
+                        leftIconAlt="delete"
+                        leftIconWidth={20}
+                    >
+                    </Button>
+                )}
 
                 {isEditing && (
                     <div className="save-edit-container">

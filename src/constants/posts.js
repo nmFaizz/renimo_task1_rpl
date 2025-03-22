@@ -9,6 +9,7 @@ export const defaultPosts = [
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec neque ac nisi lacinia fermentum.',
         likes: 10,
         isLiked: false,
+        isEditable: true,
         comments: {
             total: 3,
             data: [
@@ -52,6 +53,7 @@ export const defaultPosts = [
         content: 'Lets go somewhere place',
         likes: 15,
         isLiked: false,
+        isEditable: false,
         comments: {
             total: 2,
             data: [
@@ -81,6 +83,7 @@ export const defaultPosts = [
         content: 'New album is out now!, check it out',
         likes: 20,
         isLiked: false,
+        isEditable: false,
         comments: {
             total: 1,
             data: [
