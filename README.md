@@ -8,6 +8,8 @@
 - **Create Posts**: Users can create posts with captions and share them.
 - **Like Posts**: Users can like posts by clicking the like button.
 - **Delete Posts**: Users can delete their own posts.
+- **Edit Posts**: Users can edit their own posts.
+- **Search posts**: Users can search the posts based on keywords with ease.
 - **Persistent Storage**: Posts are saved even when users leave the browser, using the browser's localStorage.
 
 ## Technologies used
