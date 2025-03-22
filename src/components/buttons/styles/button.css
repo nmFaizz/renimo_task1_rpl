@@ -57,3 +57,12 @@
 .btn-danger:hover {
     background-color: #ff3333;
 }
+
+.btn-unstyled {
+    background-color: transparent;
+    color: var(--primary-black);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}

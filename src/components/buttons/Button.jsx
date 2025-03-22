@@ -22,6 +22,7 @@ export default function Button({
     danger: 'btn-danger',
     outlined: 'btn-outlined',
     success: 'btn-success',
+    unstyled: 'btn-unstyled',
   };
 
   const buttonClasses = `${variantClasses[variant] || variantClasses.primary} ${className}`;

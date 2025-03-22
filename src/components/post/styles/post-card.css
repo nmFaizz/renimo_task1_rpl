@@ -1,7 +1,6 @@
 .card-container {
-    background-color: var(--secondary-white);
-    padding: 1.5rem;
-    border-radius: var(--rounded-xl);
+    border-bottom: 1px solid var(--primary-gray);
+    padding-block: 1rem;
 }
 
 .card-container .card-header {
@@ -17,8 +16,8 @@
 .card-container .card-header .profile {
     background-color: black;
     border-radius: 9999px;
-    height: 35px;
-    width: 35px;
+    height: 50px;
+    width: 50px;
     overflow: hidden;
 }
 
@@ -28,9 +27,9 @@
 
 .card-container .card-footer {
     display: flex;
-    gap: 0.5rem;
+    gap: 2rem;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     flex-wrap: wrap;
     
 }
@@ -40,4 +39,9 @@
     border: 1px solid var(--primary-gray);
     padding: 1rem;
     border-radius: var(--rounded-lg);
+}
+
+.card-container .save-edit-container {
+    display: flex;
+    gap: 1rem;
 }

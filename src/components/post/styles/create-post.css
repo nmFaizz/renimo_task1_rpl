@@ -25,7 +25,7 @@
 }
 
 .textarea-group textarea:focus {
-    height: 250px;
+    height: 150px;
 }
 
 .textarea-group figure {

@@ -21,7 +21,13 @@ export default function CreatePost() {
                         required
                     />
                 </div>
-            <Button type="submit" variant="primary">Create</Button>
+            <Button 
+                type="submit" 
+                variant="primary"
+                className="post-button"
+            >
+                Post
+            </Button>
             </form>
         </div>
     )

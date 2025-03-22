@@ -23,10 +23,10 @@ export default function PostCard({ data }) {
         <div className="card-container">
             <div className="card-header">
                 <figure className="profile">
-                    <img src={data.user.avatar || "/sinon.jpeg"} alt="profile" width={35} />
+                    <img src={data.user.avatar || "/sinon.jpeg"} alt="profile" width={50} />
                 </figure>
                 <div className="profile-info">
-                    <p>{data.user.username}</p>
+                    <p style={{ fontWeight: "bold" }}>{data.user.username}</p>
                     <span>{data.createdAt}</span>
                 </div>
 
@@ -34,9 +34,11 @@ export default function PostCard({ data }) {
                     <Button 
                         variant="outlined"
                         onClick={() => setIsEditing(true)}
+                        leftIconSrc={"/icons/edit.svg"}
+                        leftIconAlt="edit"
+                        leftIconWidth={20}
                         style={{ marginLeft: "auto"}}
                     >
-                        Edit
                     </Button>
                 )}
             </div>
@@ -52,56 +54,55 @@ export default function PostCard({ data }) {
                 ) : (
                     <p>{data.content}</p>
                 )}
-
-                <p style={{ marginTop: "2rem" }}>
-                    Likes {data.likes} - Comments {data.comments.total}
-                </p>
             </div>
 
             <div className="card-footer">
                 {data.isLiked ? (
                     <Button
-                        variant="primary"
+                        variant="unstyled"
                         leftIconSrc={"/icons/heart-fill.svg"}
                         leftIconAlt="like"
-                        leftIconClassname="invert"
+                        leftIconWidth={20}
                         onClick={() => handleLikePost(data.id)}
                     >
-                        Liked
+                        {data.likes}
                     </Button>
                 ) : (
                     <Button
-                        variant="primary"
+                        variant="unstyled"
                         leftIconSrc={"/icons/heart-outline.svg"}
                         leftIconAlt="like"
-                        leftIconClassname="invert"
+                        leftIconWidth={20}
                         onClick={() => handleLikePost(data.id)}
                     >
-                        Like
+                        {data.likes}
                     </Button>
                 )}
 
                 <Button
-                    variant="outlined"
+                    variant="unstyled"
                     leftIconSrc={"/icons/comment-dots.svg"}
                     leftIconAlt="comment"
                     leftIconWidth={20}
                 >
-                    Comment
+                    {data.comments.total}
                 </Button>
 
                 <Button
-                    variant="danger"
+                    variant="unstyled"
                     onClick={() => handleDeletePost(data.id)}
+                    leftIconSrc={"/icons/trash.svg"}
+                    leftIconAlt="delete"
+                    leftIconWidth={20}
                 >
-                    Delete
+
                 </Button>
 
                 {isEditing && (
-                    <>
-                        <Button variant="outlined" onClick={handleSaveEdit}>Save</Button>
+                    <div className="save-edit-container">
+                        <Button variant="primary" onClick={handleSaveEdit}>Save</Button>
                         <Button variant="outlined" onClick={handleCancelEdit}>Cancel</Button>
-                    </>
+                    </div>
                 )}
             </div>
         </div>
