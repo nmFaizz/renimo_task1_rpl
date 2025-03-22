@@ -4,7 +4,7 @@
 
 `Renimo` is a simple social media app built with React, inspired by X and Instagram Threads. Renimo focuses on providing a streamlined and minimalistic user experience, allowing users to easily create, like, and manage their posts. The app keeps things simple, with an intuitive interface and smooth performance. Give it a try to visit [`Renimo`](https://renimo.vercel.app)
 
-## What users can do
+## Main features
 - **Create Posts**: Users can create posts with captions and share them.
 - **Like Posts**: Users can like posts by clicking the like button.
 - **Delete Posts**: Users can delete their own posts.
