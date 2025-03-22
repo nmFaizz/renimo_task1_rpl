@@ -22,11 +22,17 @@
     overflow: hidden;
 }
 
+.card-container .card-header .profile-info {
+    flex: 1;
+}
+
 .card-container .card-footer {
     display: flex;
     gap: 0.5rem;
     align-items: center;
     margin-top: 1rem;
+    flex-wrap: wrap;
+    
 }
 
 .card-container .edit-textarea {
