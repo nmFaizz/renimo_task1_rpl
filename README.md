@@ -1,12 +1,16 @@
-# React + Vite
+# Renimo - Social Thread App
+![image](https://github.com/user-attachments/assets/61d4871a-c38e-4e14-9c4b-d833fc62fd9b)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+`Renimo` is a simple social media app built with React, inspired by X and Instagram Threads. Renimo focuses on providing a streamlined and minimalistic user experience, allowing users to easily create, like, and manage their posts. The app keeps things simple, with an intuitive interface and smooth performance. Give it a try to visit [`Renimo`](https://renimo.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What users can do
+- **Create Posts**: Users can create posts with captions and share them.
+- **Like Posts**: Users can like posts by clicking the like button.
+- **Delete Posts**: Users can delete their own posts.
+- **Persistent Storage**: Posts are saved even when users leave the browser, using the browser's localStorage.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies used
+- React.js: A popular frontend library for building dynamic user interfaces.
+- CSS: Used to style the HTML elements and create a responsive design.
+- localStorage: Stores posts locally in the browser, ensuring that posts are saved even when the user leaves or refreshes the page.
