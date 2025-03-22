@@ -3,7 +3,7 @@ export const defaultPosts = [
         id: 1,
         user: {
             username: 'Shino Asada',
-            avatar: 'src/assets/sinon.jpeg',
+            avatar: '/sinon.jpeg',
         },
         createdAt: 'Tuesday, June 1, 2021',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec neque ac nisi lacinia fermentum.',
@@ -16,7 +16,7 @@ export const defaultPosts = [
                     id: 1,
                     user: {
                         username: 'kirito',
-                        avatar: 'src/assets/users/kirito.jpeg',
+                        avatar: '/users/kirito.jpeg',
                     },
                     content: 'Nice!',
                     createdAt: 'Tuesday, June 1, 2021',
@@ -25,7 +25,7 @@ export const defaultPosts = [
                     id: 2,
                     user: {
                         username: 'asuna',
-                        avatar: 'src/assets/users/asuna.jpeg',
+                        avatar: '/users/asuna.jpeg',
                     },
                     content: 'Cool!',
                     createdAt: 'Tuesday, June 1, 2021',
@@ -34,7 +34,7 @@ export const defaultPosts = [
                     id: 3,
                     user: {
                         username: 'leafa',
-                        avatar: 'src/assets/users/leafa.jpeg',
+                        avatar: '/users/leafa.jpeg',
                     },
                     content: 'Awesome!',
                     createdAt: 'Tuesday, June 1, 2021',
@@ -46,10 +46,10 @@ export const defaultPosts = [
         id: 2,
         user: {
             username: 'Eugeo',
-            avatar: 'src/assets/users/eugeo.jpeg',
+            avatar: '/users/eugeo.jpeg',
         },
         createdAt: 'Wednesday, June 2, 2021',
-        content: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
+        content: 'Lets go somewhere place',
         likes: 15,
         isLiked: false,
         comments: {
@@ -63,7 +63,7 @@ export const defaultPosts = [
                     id: 2,
                     user: {
                         username: 'klein',
-                        avatar: 'src/assets/users/klein.jpeg',
+                        avatar: '/users/klein.jpeg',
                     },
                     content: 'Great post!',
                     createdAt: 'Wednesday, June 2, 2021',
@@ -74,11 +74,11 @@ export const defaultPosts = [
     {
         id: 3,
         user: {
-            username: 'Yui',
-            avatar: 'src/assets/users/yui.jpeg',
+            username: 'Ichiko Aoba',
+            avatar: '/users/ichiko-aoba.jpeg',
         },
         createdAt: 'Thursday, June 3, 2021',
-        content: 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.',
+        content: 'New album is out now!, check it out',
         likes: 20,
         isLiked: false,
         comments: {
@@ -88,7 +88,7 @@ export const defaultPosts = [
                     id: 1,
                     user: {
                         username: 'agil',
-                        avatar: 'src/assets/users/agil.jpeg',
+                        avatar: '/users/agil.jpeg',
                     },
                     content: 'Well said!',
                     createdAt: 'Thursday, June 3, 2021',

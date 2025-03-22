@@ -11,7 +11,7 @@ export default function CreatePost() {
             <form onSubmit={handleCreatePost}>
                 <div className="textarea-group">
                     <figure>
-                        <img src="src/assets/sinon.jpeg" alt="profile" width={35}/>
+                        <img src="/sinon.jpeg" alt="profile" width={35}/>
                     </figure>
                     <textarea 
                         onChange={(e) => setPostText(e.target.value)}

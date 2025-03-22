@@ -11,7 +11,7 @@ export default function Header() {
 
                 <nav className='header-nav'>
                     <figure className='profile-figure'>
-                        <img src='src/assets/sinon.jpeg' alt='profile' width={50} />
+                        <img src='/sinon.jpeg' alt='profile' width={50} />
                     </figure>
                 </nav>
             </header>

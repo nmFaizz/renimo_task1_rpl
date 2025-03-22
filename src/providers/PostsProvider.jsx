@@ -34,7 +34,7 @@ export const PostsProvider = ({ children }) => {
         id: +new Date(),
         user: {
             username: "Shino Asada",
-            avatar: "src/assets/sinon.jpeg",
+            avatar: "/sinon.jpeg",
         },
         createdAt: formatDateToCustom(new Date()),
         content: postText,

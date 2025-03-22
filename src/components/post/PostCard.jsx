@@ -23,7 +23,7 @@ export default function PostCard({ data }) {
         <div className="card-container">
             <div className="card-header">
                 <figure className="profile">
-                    <img src={data.user.avatar || "src/assets/sinon.jpeg"} alt="profile" width={35} />
+                    <img src={data.user.avatar || "/sinon.jpeg"} alt="profile" width={35} />
                 </figure>
                 <div className="profile-info">
                     <p>{data.user.username}</p>
@@ -62,7 +62,7 @@ export default function PostCard({ data }) {
                 {data.isLiked ? (
                     <Button
                         variant="primary"
-                        leftIconSrc={"src/assets/icons/heart-fill.svg"}
+                        leftIconSrc={"/icons/heart-fill.svg"}
                         leftIconAlt="like"
                         leftIconClassname="invert"
                         onClick={() => handleLikePost(data.id)}
@@ -72,7 +72,7 @@ export default function PostCard({ data }) {
                 ) : (
                     <Button
                         variant="primary"
-                        leftIconSrc={"src/assets/icons/heart-outline.svg"}
+                        leftIconSrc={"/icons/heart-outline.svg"}
                         leftIconAlt="like"
                         leftIconClassname="invert"
                         onClick={() => handleLikePost(data.id)}
@@ -83,7 +83,7 @@ export default function PostCard({ data }) {
 
                 <Button
                     variant="outlined"
-                    leftIconSrc={"src/assets/icons/comment-dots.svg"}
+                    leftIconSrc={"/icons/comment-dots.svg"}
                     leftIconAlt="comment"
                     leftIconWidth={20}
                 >
