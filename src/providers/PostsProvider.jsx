@@ -25,7 +25,7 @@ export const PostsProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(posts));
-  }, [posts]);
+  }, [posts, searchedPosts]);
 
   const handleCreatePost = (e) => {
     e.preventDefault()
@@ -76,6 +76,18 @@ export const PostsProvider = ({ children }) => {
         return post;
       });
     });
+    setSearchedPosts((prev) => {
+        return prev.map((post) => {
+            if (post.id === postId) {
+                return {
+                    ...post,
+                    isLiked: !post.isLiked,
+                    likes: post.isLiked ? post.likes - 1 : post.likes + 1,
+                }
+            }
+            return post;
+        })
+    })
   };
   
 

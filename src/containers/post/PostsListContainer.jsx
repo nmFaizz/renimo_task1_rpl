@@ -16,7 +16,7 @@ export default function PostsListContainer() {
             />
             <h3 style={{marginTop: "1rem"}}>Latest post (s)</h3>
             <div className="posts-list-container">
-                {searchedPosts.length > 0 && searchedPosts.map((post) => (
+                {(searchedPosts.length > 0 && searchText) && searchedPosts.map((post) => (
                     <PostCard key={post.id} data={post} />
                 ))}
 
